@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#quick -->
+<html lang="zh-Hant"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職場不踩雷：新鮮人避雷工具包</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #272522;
+            --muted: #68625b;
+            --line: #ded8ce;
+            --paper: #fffdfa;
+            --soft: #f4efe8;
+            --teal: #0f766e;
+            --teal-2: #115e59;
+            --teal-soft: #d9f1ec;
+            --amber: #b45309;
+            --amber-soft: #fff3d6;
+            --rose: #be123c;
+            --rose-soft: #ffe4e6;
+            --blue: #1d4ed8;
+            --blue-soft: #e0ebff;
+            --shadow: 0 18px 45px rgba(61, 52, 40, 0.12);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--soft);
+            color: var(--ink);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        select {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(222, 216, 206, 0.8);
+            background: rgba(255, 253, 250, 0.94);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
+            gap: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--teal-2);
+            font-weight: 800;
+            letter-spacing: 0;
+            white-space: nowrap;
+        }
+
+        .brand-mark,
+        .icon-box {
+            display: inline-grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            border: 1px solid rgba(15, 118, 110, 0.25);
+            border-radius: var(--radius);
+            background: var(--teal-soft);
+            color: var(--teal-2);
+            flex: 0 0 auto;
+        }
+
+        .brand svg,
+        .icon-box svg,
+        .small-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-link {
+            border-bottom: 2px solid transparent;
+            padding: 21px 0 18px;
+            text-decoration: none;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            border-color: var(--teal);
+            color: var(--teal-2);
+        }
+
+        .mobile-nav {
+            display: none;
+            width: 48%;
+            min-width: 150px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            color: var(--ink);
+            padding: 8px 10px;
+        }
+
+        .hero {
+            padding: 44px 0 36px;
+            border-bottom: 1px solid var(--line);
+            background:
+                linear-gradient(120deg, rgba(217, 241, 236, 0.88), rgba(255, 243, 214, 0.7)),
+                var(--paper);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 14px;
+            color: var(--teal-2);
+            font-size: 0.92rem;
+            font-weight: 800;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin: 0;
+            font-size: clamp(2rem, 4.4vw, 3.8rem);
+            line-height: 1.14;
+            letter-spacing: 0;
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            margin: 18px 0 0;
+            color: #4f4a44;
+            font-size: clamp(1.02rem, 2vw, 1.25rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            padding: 10px 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: #fff;
+            box-shadow: 0 12px 24px rgba(15, 118, 110, 0.22);
+        }
+
+        .btn-secondary {
+            border-color: var(--line);
+            background: rgba(255, 253, 250, 0.78);
+            color: var(--ink);
+        }
+
+        .tool-panel {
+            border: 1px solid rgba(15, 118, 110, 0.2);
+            border-radius: var(--radius);
+            background: rgba(255, 253, 250, 0.92);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border-bottom: 1px solid var(--line);
+            padding: 16px 18px;
+        }
+
+        .panel-head h2,
+        .panel-head h3 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .status-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 999px;
+            background: var(--teal);
+            box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.12);
+        }
+
+        .quick-picker {
+            display: grid;
+            gap: 10px;
+            padding: 18px;
+        }
+
+        .quick-button {
+            display: grid;
+            grid-template-columns: 34px 1fr auto;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            color: var(--ink);
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .quick-button:hover,
+        .quick-button.active {
+            border-color: rgba(15, 118, 110, 0.55);
+            background: #f6fffc;
+        }
+
+        .quick-button strong {
+            display: block;
+            line-height: 1.35;
+        }
+
+        .quick-button span:not(.icon-box):not(.tag) {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 3px 9px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .tag-danger {
+            background: var(--rose-soft);
+            color: var(--rose);
+        }
+
+        .tag-watch {
+            background: var(--amber-soft);
+            color: var(--amber);
+        }
+
+        .tag-safe {
+            background: var(--teal-soft);
+            color: var(--teal-2);
+        }
+
+        .tag-info {
+            background: var(--blue-soft);
+            color: var(--blue);
+        }
+
+        .quick-result {
+            border-top: 1px solid var(--line);
+            padding: 18px;
+            background: #fffaf2;
+        }
+
+        .quick-result h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+        }
+
+        .quick-result p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 56px 0;
+            scroll-margin-top: 76px;
+        }
+
+        .section-alt {
+            background: var(--paper);
+            border-block: 1px solid var(--line);
+        }
+
+        .section-title {
+            display: grid;
+            gap: 10px;
+            max-width: 760px;
+            margin-bottom: 28px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: clamp(1.65rem, 3vw, 2.4rem);
+            line-height: 1.22;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .risk-grid,
+        .rights-grid,
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .risk-card,
+        .right-card,
+        .step-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            padding: 18px;
+        }
+
+        .risk-card {
+            display: grid;
+            gap: 12px;
+        }
+
+        .risk-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .risk-card h3,
+        .right-card h3,
+        .step-card h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            line-height: 1.35;
+        }
+
+        .risk-card p,
+        .right-card p,
+        .step-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .do-list {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: #46413b;
+            font-size: 0.95rem;
+        }
+
+        .do-list li {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 8px;
+            align-items: start;
+        }
+
+        .small-icon {
+            display: inline-grid;
+            width: 20px;
+            height: 20px;
+            place-items: center;
+            color: var(--teal);
+        }
+
+        .quiz-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
+            gap: 22px;
+            align-items: start;
+        }
+
+        .quiz-status {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            padding: 18px;
+        }
+
+        .progress-track {
+            height: 10px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: #e8e0d5;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            border-radius: inherit;
+            background: var(--teal);
+            transition: width 0.25s ease;
+        }
+
+        .score-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            border-top: 1px solid var(--line);
+            padding-top: 10px;
+            color: var(--muted);
+        }
+
+        .quiz-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .quiz-body {
+            padding: 22px;
+        }
+
+        .quiz-question {
+            margin: 0 0 18px;
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            line-height: 1.38;
+        }
+
+        .option-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option-button {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            color: var(--ink);
+            padding: 14px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .option-button:hover {
+            border-color: rgba(15, 118, 110, 0.45);
+            background: #f7fffc;
+        }
+
+        .option-button.selected {
+            border-color: var(--teal);
+            background: #eefbf8;
+        }
+
+        .option-button.dimmed {
+            opacity: 0.58;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 16px;
+            border-left: 4px solid var(--teal);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            background: #f6fffc;
+            padding: 14px;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback h3 {
+            margin: 0 0 6px;
+            font-size: 1rem;
+        }
+
+        .feedback p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .quiz-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-top: 1px solid var(--line);
+            padding: 16px 22px;
+            background: #fcf8f1;
+        }
+
+        .quiz-footer button:disabled {
+            cursor: not-allowed;
+            opacity: 0.45;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .decision-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            padding: 18px;
+        }
+
+        .decision-card strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--teal-2);
+            font-size: 1.05rem;
+        }
+
+        .decision-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .accordion {
+            display: grid;
+            gap: 10px;
+        }
+
+        .right-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: var(--ink);
+            padding: 18px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .accordion-button span:first-child {
+            display: grid;
+            gap: 3px;
+        }
+
+        .accordion-button small {
+            color: var(--muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .accordion-icon {
+            display: grid;
+            width: 30px;
+            height: 30px;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            color: var(--teal-2);
+            flex: 0 0 auto;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.24s ease;
+        }
+
+        .accordion-inner {
+            padding: 0 18px 18px;
+            color: var(--muted);
+        }
+
+        .accordion-inner a {
+            color: var(--teal-2);
+            font-weight: 700;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .resource-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .step-number {
+            display: grid;
+            width: 34px;
+            height: 34px;
+            place-items: center;
+            margin-bottom: 12px;
+            border-radius: 50%;
+            background: var(--teal-soft);
+            color: var(--teal-2);
+            font-weight: 900;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            padding: 10px 12px;
+            color: var(--teal-2);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .note {
+            margin-top: 22px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fffaf2;
+            padding: 14px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .site-footer {
+            padding: 26px 0;
+            background: #2b2925;
+            color: #f8f3ea;
+        }
+
+        .site-footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            color: rgba(248, 243, 234, 0.82);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 920px) {
+            .hero-grid,
+            .quiz-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-grid,
+            .rights-grid,
+            .decision-grid,
+            .resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 34px;
+            }
+
+            .hero-actions {
+                display: grid;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .quick-button {
+                grid-template-columns: 34px 1fr;
+            }
+
+            .quick-button .tag {
+                grid-column: 2;
+                width: fit-content;
+            }
+
+            .risk-grid,
+            .rights-grid,
+            .decision-grid,
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 42px 0;
+            }
+
+            .quiz-footer {
+                align-items: stretch;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container nav" aria-label="主選單">
+            <a class="brand" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#top" aria-label="回到首頁">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z"></path><path d="M9 12l2 2 4-5"></path></svg>
+                </span>
+                職場不踩雷
+            </a>
+            <div class="nav-links">
+                <a class="nav-link active" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#quick">避雷快查</a>
+                <a class="nav-link" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#quiz">情境測驗</a>
+                <a class="nav-link" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#principles">判斷四問</a>
+                <a class="nav-link" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#rights">權益快查</a>
+                <a class="nav-link" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#resources">求助流程</a>
+            </div>
+            <select id="mobile-nav" class="mobile-nav" aria-label="切換章節">
+                <option value="#quick">避雷快查</option>
+                <option value="#quiz">情境測驗</option>
+                <option value="#principles">判斷四問</option>
+                <option value="#rights">權益快查</option>
+                <option value="#resources">求助流程</option>
+            </select>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">
+                        <span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L3 14h8l-1 8 11-14h-8l1-6z"></path></svg></span>
+                        新鮮人避雷工具包
+                    </p>
+                    <h1>遇到怪怪的職場要求，先停一下! </h1>
+                    <p class="hero-copy">這不是法條背誦頁，而是一個快速判斷工具，當你被要求代打卡、簽文件、處理機密資料、加班卻不確定權益時，先找出風險、保留紀錄，再決定下一步。</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#quick">
+                            <span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"></path><path d="M8 9h8M8 13h5M8 17h8"></path></svg></span>
+                            先查我遇到的狀況
+                        </a>
+                        <a class="btn btn-secondary" href="file:///Users/mimibee/Documents/%E5%B0%88%E6%A5%AD%E6%95%B4%E5%90%88/%E8%81%B7%E5%A0%B4%E4%B8%8D%E8%B8%A9%E9%9B%B7/Index.html#quiz">
+                            <span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
+                            做情境測驗
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="tool-panel" aria-labelledby="quick-preview-title">
+                    <div class="panel-head">
+                        <h2 id="quick-preview-title">3 秒避雷原則</h2>
+                        <span class="status-dot" aria-hidden="true"></span>
+                    </div>
+                    <div class="quick-result">
+                        <h3>先不要急著答應</h3>
+                        <p>只要牽涉造假、保密資料、簽名、離職、加班薪資，先把對話和文件留存，再確認公司規定與法律權益。</p>
+                    </div>
+                    <div class="quick-picker" aria-label="快速原則">
+                        <div class="quick-button" role="group" aria-label="第一步">
+                            <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"></path></svg></span>
+                            <span><strong>不立刻照做</strong><span>先爭取時間確認</span></span>
+                            <span class="tag tag-danger">停</span>
+                        </div>
+                        <div class="quick-button" role="group" aria-label="第二步">
+                            <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8M8 17h5"></path></svg></span>
+                            <span><strong>留下紀錄</strong><span>訊息、文件、時間點</span></span>
+                            <span class="tag tag-watch">存</span>
+                        </div>
+                        <div class="quick-button" role="group" aria-label="第三步">
+                            <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                            <span><strong>找對窗口</strong><span>主管、人資、1955、法扶</span></span>
+                            <span class="tag tag-safe">問</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="quick" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>避雷快查：你現在遇到哪一種狀況？</h2>
+                    <p>點一張卡片，先抓出風險等級和第一個該做的動作。這裡的建議是初步判斷，真正要處理爭議時仍建議向勞工主管機關或法律專業確認。</p>
+                </div>
+
+                <div id="risk-grid" class="risk-grid">
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+                        <span class="tag tag-danger">高風險</span>
+                    </div>
+                    <h3>被要求改資料或做假紀錄</h3>
+                    <p>造假可能讓你從被交辦的人，變成共同參與的人。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>不要用自己的帳號或簽名處理</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>把要求的內容與時間留下</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>用文字回覆：我需要確認合規做法</span></li>
+                    </ul>
+                </article>
+            
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8M8 17h5"></path></svg></span>
+                        <span class="tag tag-danger">高風險</span>
+                    </div>
+                    <h3>代打卡、代簽名、代送表單</h3>
+                    <p>看似幫忙，實際上是在製造不實紀錄。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>明確拒絕代替他人留下紀錄</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>保留對方請託訊息</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>若被施壓，向主管或人資確認規定</span></li>
+                    </ul>
+                </article>
+            
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                        <span class="tag tag-danger">高風險</span>
+                    </div>
+                    <h3>群組分享內部資料</h3>
+                    <p>私人群組也可能留下證據；未公開資料不要截圖轉傳。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>不要跟著評論或轉傳</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>提醒資料可能涉及保密</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>重大洩漏時向可信窗口反映</span></li>
+                    </ul>
+                </article>
+            
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span>
+                        <span class="tag tag-watch">需確認</span>
+                    </div>
+                    <h3>加班、工時、薪資怪怪的</h3>
+                    <p>正常工時、加班同意與加班費都有規範，先把出勤資料整理好。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>留存班表、打卡、薪資單</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>比對每日與每週工時</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>必要時使用勞動部加班費試算</span></li>
+                    </ul>
+                </article>
+            
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path></svg></span>
+                        <span class="tag tag-watch">需確認</span>
+                    </div>
+                    <h3>試用期被要求自請離職</h3>
+                    <p>試用期不代表沒有勞動保障，也不等於可以任意叫你走。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>不要當場簽自願離職</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>詢問具體理由與書面資料</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>向勞工局處或 1955 諮詢</span></li>
+                    </ul>
+                </article>
+            
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span>
+                        <span class="tag tag-watch">需確認</span>
+                    </div>
+                    <h3>主管私下請你接案或幫忙</h3>
+                    <p>可能牽涉利益衝突、競業、保密或公司資源使用。</p>
+                    <ul class="do-list">
+                        <li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>確認是否使用公司時間或資料</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>回頭檢查合約與工作規則</span></li><li><span class="small-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></span><span>不確定就先拒絕或請對方走正式流程</span></li>
+                    </ul>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>情境測驗：練習把自己保護好</h2>
+                    <p>不是考你有沒有背法條，而是練習在壓力下做出比較穩的回應。每題選完會看到風險標籤和建議說法。</p>
+                </div>
+
+                <div class="quiz-shell">
+                    <aside class="quiz-status" aria-live="polite">
+                        <div class="panel-head" style="padding:0 0 14px;border-bottom:0">
+                            <h3>測驗進度</h3>
+                            <span id="quiz-count" class="tag tag-info">1 / 4</span>
+                        </div>
+                        <div class="progress-track" aria-hidden="true">
+                            <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <div class="score-list">
+                            <div class="score-row"><span>穩健選擇</span><strong id="safe-score">0</strong></div>
+                            <div class="score-row"><span>需再確認</span><strong id="watch-score">0</strong></div>
+                            <div class="score-row"><span>高風險選擇</span><strong id="danger-score">0</strong></div>
+                        </div>
+                    </aside>
+
+                    <div class="quiz-card">
+                        <div class="quiz-body" id="quiz-body">
+                    <p class="eyebrow">情境 1</p>
+                    <h2 class="quiz-question">主管請你把實驗或工程數據修得比較漂亮，說只是格式調整。你會怎麼做？</h2>
+                    <div class="option-list">
+                        
+                            <button class="option-button" type="button" data-index="0">
+                                照做，反正主管負責。
+                            </button>
+                        
+                            <button class="option-button" type="button" data-index="1">
+                                先問清楚哪些是格式、哪些會改變事實，並要求留下書面說明。
+                            </button>
+                        
+                            <button class="option-button" type="button" data-index="2">
+                                私下跟同事抱怨，但還是先改。
+                            </button>
+                        
+                    </div>
+                    <div id="feedback" class="feedback" aria-live="polite"></div>
+                </div>
+                        <div class="quiz-footer">
+                            <span id="quiz-helper">選一個你直覺會做的回應</span>
+                            <button id="next-question" class="btn btn-primary" type="button" disabled="">下一題</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>判斷四問：任何怪要求都先過這一關</h2>
+                    <p> 只要其中一題答案讓你卡住，就代表這件事不能靠「大家都這樣」帶過。</p>
+                </div>
+
+                <div class="decision-grid">
+                    <div class="decision-card">
+                        <strong>1. 這件事誠實嗎？</strong>
+                        <p>會不會改資料、代簽、代打卡、隱瞞事實，讓紀錄看起來和真實狀況不同？</p>
+                    </div>
+                    <div class="decision-card">
+                        <strong>2. 這是我的責任嗎？</strong>
+                        <p>工作內容、權限、交辦方式是否清楚？如果出事，誰會承擔後果？</p>
+                    </div>
+                    <div class="decision-card">
+                        <strong>3. 有尊重他人嗎？</strong>
+                        <p>是否涉及歧視、霸凌、騷擾、公開羞辱，或把壓力轉嫁給同事？</p>
+                    </div>
+                    <div class="decision-card">
+                        <strong>4. 會洩漏機密嗎？</strong>
+                        <p>資料是否含客戶名單、內部價格、設計圖、財報、未公開專案或帳號權限？</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rights" class="section section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>權益快查：新鮮人最常問的 6 件事</h2>
+                    <p>每張卡都先給一句話重點，再展開看細節。</p>
+                </div>
+
+                <div id="rights-accordion" class="accordion">
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-0">
+                        <span>
+                            <strong>工時與加班費</strong>
+                            <small>正常工時原則上每日 8 小時、每週 40 小時。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-0" class="accordion-content">
+                        <div class="accordion-inner">超過正常工時的部分，通常應依規定計算加班費；加班也應有勞工同意與出勤紀錄。可用 <a href="https://calcr2.mol.gov.tw/Index" target="_blank" rel="noopener">勞動部加班費試算系統</a> 初步估算。</div>
+                    </div>
+                </article>
+            
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-1">
+                        <span>
+                            <strong>試用期</strong>
+                            <small>試用期不代表沒有勞基法保障。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-1" class="accordion-content">
+                        <div class="accordion-inner">勞基法沒有把「試用期」列為雇主可任意解僱的理由。若被要求自請離職、簽放棄權利或不給薪資，建議保留資料並向 1955 或地方勞工局處諮詢。</div>
+                    </div>
+                </article>
+            
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-2">
+                        <span>
+                            <strong>解僱與資遣</strong>
+                            <small>雇主不能只用一句不適任就叫你立刻走人。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-2" class="accordion-content">
+                        <div class="accordion-inner">解僱或資遣通常需要符合法定事由與程序，並可能涉及預告期間、資遣費、非自願離職證明等。不要在壓力下急著簽自願離職。</div>
+                    </div>
+                </article>
+            
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-3">
+                        <span>
+                            <strong>薪資、特休與請假</strong>
+                            <small>薪資應定期、直接、全額給付。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-3" class="accordion-content">
+                        <div class="accordion-inner">留意薪資單、扣款項目、出勤紀錄與假別。特休、病假、事假等規定會依年資與法規不同而有差異，遇到爭議先把紀錄整理完整。</div>
+                    </div>
+                </article>
+            
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-4">
+                        <span>
+                            <strong>保密與營業秘密</strong>
+                            <small>未公開資料不要截圖、轉傳或帶走。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-4" class="accordion-content">
+                        <div class="accordion-inner">客戶名單、報價、設計圖、未公開專案、財務資料、帳號權限等都可能涉及保密義務。即使離職，也不要自行保存或使用公司資料。</div>
+                    </div>
+                </article>
+            
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-5">
+                        <span>
+                            <strong>合約與簽名</strong>
+                            <small>空白文件、不完整文件、看不懂的條款都不要急著簽。</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-5" class="accordion-content">
+                        <div class="accordion-inner">簽名前確認薪資、工時、職務內容、保密、競業禁止、違約金、離職限制等條款。可以禮貌回覆：「我需要帶回審閱，確認後再簽。」</div>
+                    </div>
+                </article>
+            </div>
+
+                <p class="note">提醒：法規與主管機關解釋可能更新，本頁供教育與初步判斷使用；遇到實際爭議，請以勞動部、地方勞工局處、法律扶助基金會或律師意見為準。</p>
+            </div>
+        </section>
+
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>求助流程：把問題講清楚，比一開始就硬碰硬更有用</h2>
+                    <p>遇到風險時，先讓事情可被理解、可被查證，再決定要內部反映或外部諮詢。</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <h3>整理時間線</h3>
+                        <p>寫下發生日期、地點、誰說了什麼、你做了什麼、手上有哪些文件或訊息。</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <h3>保留原始紀錄</h3>
+                        <p>保留對話、合約、薪資單、出勤紀錄。不要自行變造、散布或公開公司機密。</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <h3>先問可信窗口</h3>
+                        <p>可先詢問直屬主管、人資、學校實習窗口、工會或可信任的職場前輩。</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <h3>必要時外部諮詢</h3>
+                        <p>涉及薪資、解僱、職災、性騷擾、重大違法或逼簽文件時，盡快找官方或法律資源。</p>
+                    </div>
+                </div>
+
+                <div class="resource-links" aria-label="求助資源連結">
+                    <a class="resource-link" href="https://www.mol.gov.tw/" target="_blank" rel="noopener">勞動部官網</a>
+                    <a class="resource-link" href="https://www.mol.gov.tw/1607/28690/28700/" target="_blank" rel="noopener">1955 勞工諮詢申訴專線</a>
+                    <a class="resource-link" href="https://calcr2.mol.gov.tw/Index" target="_blank" rel="noopener">加班費試算系統</a>
+                    <a class="resource-link" href="https://www.laf.org.tw/" target="_blank" rel="noopener">法律扶助基金會</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>職場不踩雷：新鮮人避雷工具包</span>
+            <span>更新方向：快速判斷、保留紀錄、找對資源</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const icons = {
+                alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>',
+                file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>',
+                clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+                lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+                briefcase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg>',
+                message: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>',
+                check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>'
+            };
+
+            const risks = [
+                {
+                    title: "被要求改資料或做假紀錄",
+                    level: "高風險",
+                    tagClass: "tag-danger",
+                    icon: "alert",
+                    summary: "造假可能讓你從被交辦的人，變成共同參與的人。",
+                    steps: ["不要用自己的帳號或簽名處理", "把要求的內容與時間留下", "用文字回覆：我需要確認合規做法"]
+                },
+                {
+                    title: "代打卡、代簽名、代送表單",
+                    level: "高風險",
+                    tagClass: "tag-danger",
+                    icon: "file",
+                    summary: "看似幫忙，實際上是在製造不實紀錄。",
+                    steps: ["明確拒絕代替他人留下紀錄", "保留對方請託訊息", "若被施壓，向主管或人資確認規定"]
+                },
+                {
+                    title: "群組分享內部資料",
+                    level: "高風險",
+                    tagClass: "tag-danger",
+                    icon: "lock",
+                    summary: "私人群組也可能留下證據；未公開資料不要截圖轉傳。",
+                    steps: ["不要跟著評論或轉傳", "提醒資料可能涉及保密", "重大洩漏時向可信窗口反映"]
+                },
+                {
+                    title: "加班、工時、薪資怪怪的",
+                    level: "需確認",
+                    tagClass: "tag-watch",
+                    icon: "clock",
+                    summary: "正常工時、加班同意與加班費都有規範，先把出勤資料整理好。",
+                    steps: ["留存班表、打卡、薪資單", "比對每日與每週工時", "必要時使用勞動部加班費試算"]
+                },
+                {
+                    title: "試用期被要求自請離職",
+                    level: "需確認",
+                    tagClass: "tag-watch",
+                    icon: "briefcase",
+                    summary: "試用期不代表沒有勞動保障，也不等於可以任意叫你走。",
+                    steps: ["不要當場簽自願離職", "詢問具體理由與書面資料", "向勞工局處或 1955 諮詢"]
+                },
+                {
+                    title: "主管私下請你接案或幫忙",
+                    level: "需確認",
+                    tagClass: "tag-watch",
+                    icon: "message",
+                    summary: "可能牽涉利益衝突、競業、保密或公司資源使用。",
+                    steps: ["確認是否使用公司時間或資料", "回頭檢查合約與工作規則", "不確定就先拒絕或請對方走正式流程"]
+                }
+            ];
+
+            const riskGrid = document.getElementById("risk-grid");
+            riskGrid.innerHTML = risks.map((risk) => `
+                <article class="risk-card">
+                    <div class="risk-top">
+                        <span class="icon-box" aria-hidden="true">${icons[risk.icon]}</span>
+                        <span class="tag ${risk.tagClass}">${risk.level}</span>
+                    </div>
+                    <h3>${risk.title}</h3>
+                    <p>${risk.summary}</p>
+                    <ul class="do-list">
+                        ${risk.steps.map((step) => `<li><span class="small-icon" aria-hidden="true">${icons.check}</span><span>${step}</span></li>`).join("")}
+                    </ul>
+                </article>
+            `).join("");
+
+            const questions = [
+                {
+                    question: "主管請你把實驗或工程數據修得比較漂亮，說只是格式調整。你會怎麼做？",
+                    options: [
+                        { text: "照做，反正主管負責。", type: "danger", label: "高風險", feedback: "如果內容已經不是原始事實，就不只是格式問題。用自己的帳號或簽名處理，會讓責任更靠近你。" },
+                        { text: "先問清楚哪些是格式、哪些會改變事實，並要求留下書面說明。", type: "safe", label: "穩健", feedback: "這是較穩的做法。你把問題從人情壓力拉回具體界線，也保留後續釐清空間。" },
+                        { text: "私下跟同事抱怨，但還是先改。", type: "watch", label: "需再確認", feedback: "抱怨不能保護你。真正重要的是不要製造不實紀錄，並留下你曾確認疑慮的證據。" }
+                    ]
+                },
+                {
+                    question: "同事傳訊息拜託你幫忙打卡，說下次一定請飲料。你會怎麼做？",
+                    options: [
+                        { text: "拒絕代打卡，並請他走請假或補登流程。", type: "safe", label: "穩健", feedback: "這是最乾淨的界線。你沒有讓自己變成不實出勤紀錄的一部分。" },
+                        { text: "幫一次就好，大家互相幫忙。", type: "danger", label: "高風險", feedback: "代打卡不是一般幫忙，而是做出不實紀錄。被查到時，通常兩個人都會受影響。" },
+                        { text: "假裝沒看到訊息。", type: "watch", label: "需再確認", feedback: "短期避開衝突，但界線不清。較好的方式是明確拒絕，讓對方知道你不做這類事。" }
+                    ]
+                },
+                {
+                    question: "你拿到一份空白或內容不完整的文件，對方說先簽，之後再補。你會怎麼做？",
+                    options: [
+                        { text: "先簽，避免讓對方覺得你難搞。", type: "danger", label: "高風險", feedback: "空白文件最大的問題是內容可以在你簽名後被補上。簽名前一定要看到完整內容。" },
+                        { text: "拍照留存後簽名。", type: "watch", label: "需再確認", feedback: "留存比沒有好，但不能解決空白或不完整的風險。真正該做的是要求補齊後再簽。" },
+                        { text: "請對方補齊條款，帶回審閱，有疑問再諮詢。", type: "safe", label: "穩健", feedback: "這是保護自己的基本動作。薪資、工時、離職、競業與保密條款尤其要看清楚。" }
+                    ]
+                },
+                {
+                    question: "你在群組看到同事貼出未公開客戶資料並評論，你覺得很誇張。你會怎麼做？",
+                    options: [
+                        { text: "跟著留言，反正大家都看到了。", type: "danger", label: "高風險", feedback: "不要讓自己加入資料外流的鏈條。留言、轉傳、截圖外流都可能擴大風險。" },
+                        { text: "不轉傳，私下提醒資料可能涉及保密。", type: "safe", label: "穩健", feedback: "這兼顧界線和關係。若資料敏感或外流範圍大，再找正式窗口處理。" },
+                        { text: "直接把截圖貼到另一個群組提醒大家小心。", type: "danger", label: "高風險", feedback: "提醒的動機可能是好的，但再次轉貼仍可能擴大機密資料流通。" }
+                    ]
+                }
+            ];
+
+            let currentQuestion = 0;
+            const scores = { safe: 0, watch: 0, danger: 0 };
+            const quizBody = document.getElementById("quiz-body");
+            const nextButton = document.getElementById("next-question");
+            const helper = document.getElementById("quiz-helper");
+            const progressBar = document.getElementById("progress-bar");
+            const quizCount = document.getElementById("quiz-count");
+
+            function updateScores() {
+                document.getElementById("safe-score").textContent = scores.safe;
+                document.getElementById("watch-score").textContent = scores.watch;
+                document.getElementById("danger-score").textContent = scores.danger;
+                quizCount.textContent = `${Math.min(currentQuestion + 1, questions.length)} / ${questions.length}`;
+                progressBar.style.width = `${(currentQuestion / questions.length) * 100}%`;
+            }
+
+            function renderQuestion() {
+                const item = questions[currentQuestion];
+                helper.textContent = "選一個你直覺會做的回應";
+                nextButton.textContent = currentQuestion === questions.length - 1 ? "看總結" : "下一題";
+                nextButton.disabled = true;
+                quizBody.innerHTML = `
+                    <p class="eyebrow">情境 ${currentQuestion + 1}</p>
+                    <h2 class="quiz-question">${item.question}</h2>
+                    <div class="option-list">
+                        ${item.options.map((option, index) => `
+                            <button class="option-button" type="button" data-index="${index}">
+                                ${option.text}
+                            </button>
+                        `).join("")}
+                    </div>
+                    <div id="feedback" class="feedback" aria-live="polite"></div>
+                `;
+
+                quizBody.querySelectorAll(".option-button").forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const selected = item.options[Number(button.dataset.index)];
+                        scores[selected.type] += 1;
+                        quizBody.querySelectorAll(".option-button").forEach((optionButton) => {
+                            optionButton.disabled = true;
+                            optionButton.classList.add("dimmed");
+                        });
+                        button.classList.remove("dimmed");
+                        button.classList.add("selected");
+
+                        const feedback = document.getElementById("feedback");
+                        const labelClass = selected.type === "safe" ? "tag-safe" : selected.type === "watch" ? "tag-watch" : "tag-danger";
+                        feedback.innerHTML = `<h3><span class="tag ${labelClass}">${selected.label}</span></h3><p>${selected.feedback}</p>`;
+                        feedback.classList.add("show");
+                        helper.textContent = "已記錄這題的選擇";
+                        nextButton.disabled = false;
+                        updateScores();
+                    }, { once: true });
+                });
+            }
+
+            function renderSummary() {
+                progressBar.style.width = "100%";
+                quizCount.textContent = `${questions.length} / ${questions.length}`;
+                const mainAdvice = scores.danger > 0
+                    ? "你有選到高風險回應。遇到造假、代簽、保密或逼簽文件時，最重要的是先不要照做，留下紀錄，再找可信窗口確認。"
+                    : scores.watch > 1
+                        ? "你的直覺偏保守，但有些情境還需要更明確地拒絕或留下書面紀錄。"
+                        : "你的選擇很穩。繼續保持確認事實、留下紀錄、找對窗口的習慣。";
+                quizBody.innerHTML = `
+                    <p class="eyebrow">測驗完成</p>
+                    <h2 class="quiz-question">你的避雷提醒</h2>
+                    <p>${mainAdvice}</p>
+                    <ul class="do-list" style="margin-top:16px">
+                        <li><span class="small-icon" aria-hidden="true">${icons.check}</span><span>不確定是否合法時，不要用自己的簽名、帳號或名義處理。</span></li>
+                        <li><span class="small-icon" aria-hidden="true">${icons.check}</span><span>把口頭要求轉成文字確認，例如「我想確認這樣做是否符合公司流程」。</span></li>
+                        <li><span class="small-icon" aria-hidden="true">${icons.check}</span><span>涉及薪資、工時、解僱或強迫簽署，盡早尋求勞工諮詢。</span></li>
+                    </ul>
+                `;
+                helper.textContent = "可以重新測一次，或往下查權益";
+                nextButton.textContent = "重新測驗";
+                nextButton.disabled = false;
+            }
+
+            nextButton.addEventListener("click", () => {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion += 1;
+                    updateScores();
+                    renderQuestion();
+                    return;
+                }
+                if (nextButton.textContent === "重新測驗") {
+                    currentQuestion = 0;
+                    scores.safe = 0;
+                    scores.watch = 0;
+                    scores.danger = 0;
+                    updateScores();
+                    renderQuestion();
+                    return;
+                }
+                renderSummary();
+            });
+
+            updateScores();
+            renderQuestion();
+
+            const rightItems = [
+                {
+                    title: "工時與加班費",
+                    summary: "正常工時原則上每日 8 小時、每週 40 小時。",
+                    content: '超過正常工時的部分，通常應依規定計算加班費；加班也應有勞工同意與出勤紀錄。可用 <a href="https://calcr2.mol.gov.tw/Index" target="_blank" rel="noopener">勞動部加班費試算系統</a> 初步估算。'
+                },
+                {
+                    title: "試用期",
+                    summary: "試用期不代表沒有勞基法保障。",
+                    content: '勞基法沒有把「試用期」列為雇主可任意解僱的理由。若被要求自請離職、簽放棄權利或不給薪資，建議保留資料並向 1955 或地方勞工局處諮詢。'
+                },
+                {
+                    title: "解僱與資遣",
+                    summary: "雇主不能只用一句不適任就叫你立刻走人。",
+                    content: '解僱或資遣通常需要符合法定事由與程序，並可能涉及預告期間、資遣費、非自願離職證明等。不要在壓力下急著簽自願離職。'
+                },
+                {
+                    title: "薪資、特休與請假",
+                    summary: "薪資應定期、直接、全額給付。",
+                    content: '留意薪資單、扣款項目、出勤紀錄與假別。特休、病假、事假等規定會依年資與法規不同而有差異，遇到爭議先把紀錄整理完整。'
+                },
+                {
+                    title: "保密與營業秘密",
+                    summary: "未公開資料不要截圖、轉傳或帶走。",
+                    content: '客戶名單、報價、設計圖、未公開專案、財務資料、帳號權限等都可能涉及保密義務。即使離職，也不要自行保存或使用公司資料。'
+                },
+                {
+                    title: "合約與簽名",
+                    summary: "空白文件、不完整文件、看不懂的條款都不要急著簽。",
+                    content: '簽名前確認薪資、工時、職務內容、保密、競業禁止、違約金、離職限制等條款。可以禮貌回覆：「我需要帶回審閱，確認後再簽。」'
+                }
+            ];
+
+            const accordion = document.getElementById("rights-accordion");
+            accordion.innerHTML = rightItems.map((item, index) => `
+                <article class="right-card">
+                    <button class="accordion-button" type="button" aria-expanded="false" aria-controls="right-${index}">
+                        <span>
+                            <strong>${item.title}</strong>
+                            <small>${item.summary}</small>
+                        </span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div id="right-${index}" class="accordion-content">
+                        <div class="accordion-inner">${item.content}</div>
+                    </div>
+                </article>
+            `).join("");
+
+            accordion.querySelectorAll(".accordion-button").forEach((button) => {
+                button.addEventListener("click", () => {
+                    const content = document.getElementById(button.getAttribute("aria-controls"));
+                    const isOpen = button.getAttribute("aria-expanded") === "true";
+                    accordion.querySelectorAll(".accordion-button").forEach((otherButton) => {
+                        otherButton.setAttribute("aria-expanded", "false");
+                        otherButton.querySelector(".accordion-icon").textContent = "+";
+                    });
+                    accordion.querySelectorAll(".accordion-content").forEach((panel) => {
+                        panel.style.maxHeight = "0px";
+                    });
+                    if (!isOpen) {
+                        button.setAttribute("aria-expanded", "true");
+                        button.querySelector(".accordion-icon").textContent = "-";
+                        content.style.maxHeight = `${content.scrollHeight}px`;
+                    }
+                });
+            });
+
+            const navLinks = document.querySelectorAll(".nav-link");
+            const sections = document.querySelectorAll("main section[id]");
+            const setActiveNav = () => {
+                let active = "";
+                sections.forEach((section) => {
+                    if (window.scrollY >= section.offsetTop - 110) {
+                        active = section.id;
+                    }
+                });
+                navLinks.forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${active}`);
+                });
+            };
+
+            window.addEventListener("scroll", setActiveNav, { passive: true });
+            setActiveNav();
+
+            document.getElementById("mobile-nav").addEventListener("change", (event) => {
+                window.location.hash = event.target.value;
+            });
+        });
+    </script>
+
+
+</body></html>
